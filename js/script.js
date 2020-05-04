@@ -5,12 +5,12 @@
 // Referencias do HTML
 
 const formDados = document.getElementById('frmdados');
-const inputUser = document.getElementById('impName');
-const impId = document.getElementById('impId');
+const inputUser = document.getElementById('inpName');
+const inpId = document.getElementById('inpId');
 const btnConst = document.getElementById('btnConst');
 const btnCad = document.getElementById('btnCad');
 const btnUpdate = document.getElementById('btnUpdate');
-
+const btndel = document.getElementById('btndel');
 
 
 btnConst.onclick = function(){
@@ -42,7 +42,7 @@ btnCad.onclick = function(){
 btnUpdate.onclick = function(){
     console.log('Botão Updade executado')
     var nameUser = inputUser.value;
-    var idupdate = impId.value;
+    var idupdate = inpId.value;
     axios({
         method: 'put',
         url: 'http://localhost:3333/users/' + idupdate,
@@ -54,3 +54,17 @@ btnUpdate.onclick = function(){
     }).catch(err => console.log(err))
 
 };
+
+btndel.onclick = function(){
+    console.log('Botão Updade executado')
+    var nameUser = inputUser.value;
+    var iddel = inpId.value;
+    axios({
+        method: 'delete',
+        url: 'http://localhost:3333/users/' + iddel,
+     
+    }).then(res => {
+        console.log(res.data);
+    }).catch(err => console.log(err))
+};
+
