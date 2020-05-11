@@ -15,4 +15,4 @@ Utilizando método: GET, POST, PUT e DELETE.
  * Axios
 
   ---
- Made by 💙 by [Henrique Barbosa de Souza Júnior](https://github.com/HenriqueBarbosaSJr)
+ Made with 💙 by [Henrique Barbosa de Souza Júnior](https://github.com/HenriqueBarbosaSJr)
