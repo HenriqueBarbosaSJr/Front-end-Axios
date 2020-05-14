@@ -16,12 +16,12 @@ body{
     width: 300px;
     display: inline-block;
     align-items: center;
+    border-radius: 8px;
+    background-color: rgb(203, 214, 233);
 
-    
-    
-    
-    background-color: rosybrown;
-
+}
+h1{
+    color: rgb(137, 157, 216);
 }
 
 .inputs{
@@ -29,6 +29,9 @@ body{
     width: 280px;
     margin-left: 10px;
     margin-top: 10px;
+    border: 0;
+    border-radius: 3px;
+    padding: 3px;
 
 
 }
@@ -53,16 +56,19 @@ main{
     display: flex;
     justify-content: center;
     margin-top: 150px;
+    
 }
 header{
     height: 50px;
-    background: rebeccapurple;
+    background: #c3c3d1;
+    text-align: center;
+    padding-top: 10px;
 
 }
 
 footer{
     height: 30px;
-    background: red;
+    background: #d1d1da;
     width: 100%;
     position: absolute;
     bottom: 0;
