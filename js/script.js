@@ -2,7 +2,7 @@
 
 
 
-// Referencias do HTML
+// Referências do HTML
 
 const formDados = document.getElementById('frmdados');
 const inputUser = document.getElementById('inpName');
