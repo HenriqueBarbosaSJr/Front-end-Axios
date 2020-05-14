@@ -10,3 +10,61 @@ body{
     background: #f0f0f5;
     -webkit-font-smoothing:antiase
 }
+
+.box{
+    height: 500px;
+    width: 300px;
+    display: inline-block;
+    align-items: center;
+
+    
+    
+    
+    background-color: rosybrown;
+
+}
+
+.inputs{
+    height: 35px;
+    width: 280px;
+    margin-left: 10px;
+    margin-top: 10px;
+
+
+}
+
+.button{
+    width: 100px;
+    height: 40px;
+    border: 0;
+    border-radius: 7px;
+    margin: 5px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: nome;
+    font-size: 14px;
+    transition: filter 0.2s;
+}
+
+.button:hover{
+    filter: brightness(90%);
+}
+main{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+header{
+    height: 50px;
+    background: rebeccapurple;
+
+}
+
+footer{
+    height: 30px;
+    background: red;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
