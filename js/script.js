@@ -56,7 +56,7 @@ btnUpdate.onclick = function(){
 };
 
 btndel.onclick = function(){
-    console.log('Botão Updade executado')
+    console.log('Botão Deltele executado')
     var nameUser = inputUser.value;
     var iddel = inpId.value;
     axios({
