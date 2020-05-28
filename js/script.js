@@ -8,6 +8,7 @@ const formDados = document.getElementById('frmdados');
 const inputUser = document.getElementById('inpName');
 const inpId = document.getElementById('inpId');
 const btnConst = document.getElementById('btnConst');
+const btnConstId = document.getElementById("btnConstId");
 const btnCad = document.getElementById('btnCad');
 const btnUpdate = document.getElementById('btnUpdate');
 const btndel = document.getElementById('btndel');
@@ -17,11 +18,35 @@ btnConst.onclick = function(){
     
     axios({
         method: 'GET',
-        url: 'http://localhost:3333/users'
+        url: 'http://192.168.25.18:3333/users'
     }).then(res => {
         console.log(res.data);
     }).catch(err => console.log(err))
 
+};
+
+btnConstId.onclick = function(){
+    console.log('Botão consulta por Id');
+    var constId = inpId.value;
+    console.log(constId);
+    if (constId == ''){
+        alert('Digite um id para realizar a consulta ');
+    }else{
+        axios({
+            method: 'get',
+            url: 'http://192.168.25.18:3333/user/' + constId,
+        }).then(res => {
+            if (res.data == '') {
+                alert( 'registro não encontrado ');
+            }else{
+                const  [ data ]  = (res.data);
+                inpName.value =  data.username;
+                console.log(data.username);
+            }
+    
+        }).catch(err => console.log(err));
+
+    }
 };
 
 btnCad.onclick = function(){
@@ -29,7 +54,7 @@ btnCad.onclick = function(){
     var nameUser = inputUser.value;
     axios({
         method: 'POST',
-        url: 'http://localhost:3333/users',
+        url: 'http://192.168.25.18:3333/users',
         data: {
             "username": nameUser,
         }
@@ -45,7 +70,7 @@ btnUpdate.onclick = function(){
     var idupdate = inpId.value;
     axios({
         method: 'put',
-        url: 'http://localhost:3333/users/' + idupdate,
+        url: 'http://192.168.25.18:3333/users/' + idupdate,
         data: {
             "username": nameUser,
         }
@@ -61,7 +86,7 @@ btndel.onclick = function(){
     var iddel = inpId.value;
     axios({
         method: 'delete',
-        url: 'http://localhost:3333/users/' + iddel,
+        url: 'http://192.168.25.18:3333/users/' + iddel,
      
     }).then(res => {
         console.log(res.data);
