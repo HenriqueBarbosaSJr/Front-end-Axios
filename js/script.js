@@ -68,28 +68,35 @@ btnUpdate.onclick = function(){
     console.log('Botão Updade executado')
     var nameUser = inputUser.value;
     var idupdate = inpId.value;
-    axios({
-        method: 'put',
-        url: 'http://192.168.25.18:3333/users/' + idupdate,
-        data: {
-            "username": nameUser,
-        }
-    }).then(res => {
-        console.log(res.data);
-    }).catch(err => console.log(err))
-
+    if ( idupdate == ''){
+        alert('Digite um id para realizar atualização');
+    }else{
+        axios({
+            method: 'put',
+            url: 'http://192.168.25.18:3333/users/' + idupdate,
+            data: {
+                "username": nameUser,
+            }
+        }).then(res => {
+            console.log(res.data);
+        }).catch(err => console.log(err))
+    }
 };
 
 btndel.onclick = function(){
     console.log('Botão Deltele executado')
     var nameUser = inputUser.value;
     var iddel = inpId.value;
-    axios({
-        method: 'delete',
-        url: 'http://192.168.25.18:3333/users/' + iddel,
-     
-    }).then(res => {
-        console.log(res.data);
-    }).catch(err => console.log(err))
+    if (iddel == ''){
+        alert('Digite um id para realizar exclusão');
+    }else{
+        axios({
+            method: 'delete',
+            url: 'http://192.168.25.18:3333/users/' + iddel,
+         
+        }).then(res => {
+            console.log(res.data);
+        }).catch(err => console.log(err))
+    }
 };
 
