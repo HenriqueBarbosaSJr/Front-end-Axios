@@ -12,7 +12,35 @@ const btnConstId = document.getElementById("btnConstId");
 const btnCad = document.getElementById('btnCad');
 const btnUpdate = document.getElementById('btnUpdate');
 const btndel = document.getElementById('btndel');
+const btnTeste = document.getElementById('btnTeste');
 
+
+
+class Listdados{
+    constructor(){
+
+    }
+    last(){
+        console.log('Button teste')
+        axios({
+            method: 'GET',
+            url: 'http://192.168.25.18:3333/users/last'
+        }).then(res => {
+            console.log('Classe Listdados');
+            console.log(res.data);
+            const  [ data ]  = (res.data);
+            inpIdSt.value =  data.id;
+            inpNameSt.value =  data.username;
+            console.log(data.username);
+        }).catch(err => console.log(err))
+    }
+}
+const list = new Listdados();
+
+var myVar = setInterval(list.last, 10000);
+
+
+btnTeste.onclick = ()=>{list.last()};
 
 btnConst.onclick = function(){
     
@@ -21,6 +49,7 @@ btnConst.onclick = function(){
         url: 'http://192.168.25.18:3333/users'
     }).then(res => {
         console.log(res.data);
+       
     }).catch(err => console.log(err))
 
 };
