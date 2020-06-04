@@ -1,8 +1,5 @@
-//import api from '../html/services/api';
 
-
-
-// Referências do HTML
+// Referências do DOM HTML
 
 const formDados = document.getElementById('frmdados');
 const inputUser = document.getElementById('inpName');
@@ -13,8 +10,6 @@ const btnCad = document.getElementById('btnCad');
 const btnUpdate = document.getElementById('btnUpdate');
 const btndel = document.getElementById('btndel');
 const btnTeste = document.getElementById('btnTeste');
-
-
 
 class Listdados{
     constructor(){
@@ -36,9 +31,7 @@ class Listdados{
     }
 }
 const list = new Listdados();
-
-var myVar = setInterval(list.last, 10000);
-
+setInterval(list.last, 5000);
 
 btnTeste.onclick = ()=>{list.last()};
 
@@ -81,15 +74,21 @@ btnConstId.onclick = function(){
 btnCad.onclick = function(){
     console.log('Botão Cadastro exercutado')
     var nameUser = inputUser.value;
-    axios({
-        method: 'POST',
-        url: 'http://192.168.25.18:3333/users',
-        data: {
-            "username": nameUser,
-        }
-    }).then(res => {
-        console.log(res.data);
-    }).catch(err => console.log(err))
+    if (nameUser==''){
+     
+        alert('Digite um nome para realizar o cadastro');
+        
+    }else{
+        axios({
+            method: 'POST',
+            url: 'http://192.168.25.18:3333/users',
+            data: {
+                "username": nameUser,
+            }
+        }).then(res => {
+            console.log(res.data);
+        }).catch(err => console.log(err))
+    }
 
 };
 
