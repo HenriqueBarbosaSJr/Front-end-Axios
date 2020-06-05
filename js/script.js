@@ -30,6 +30,7 @@ class Listdados{
         }).catch(err => console.log(err))
     }
 }
+
 const list = new Listdados();
 setInterval(list.last, 5000);
 
